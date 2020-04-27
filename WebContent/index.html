@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>JSP Lecture</title>
+        <style>
+            .first{grid-area: first;}
+            .second{grid-area:second;}
+            .third{grid-area:third;}
+            main{
+                display: grid;
+                grid-template-areas: 
+                'first second third';
+                gap: 20px;
+           }
+           .first_fieldset  > label{
+               float:left;
+               width: 20ch;
+               text-align:right;
+           }
+           .first_fieldset > input{
+               margin-left:0.5em;
+               margin-bottom: 0.5em;
+           }
+        </style>
+    </head>
+    <main>
+        <form id="first_form" action="second_servlet" method="post">
+            <section class="first">
+                <fieldset class="first_fieldset">
+                    <legend>City name </legend>
+                    <label> Name Starts with: </label>
+                    <input type="text" name = "s_name" maxlength="5" size="5" pattern="[a-zA-z]"> 
+                    <br>
+                    <label> Name Ends with: </label>
+                    <input type="text" name = "e_name" maxlength="5" size="5" pattern="[a-zA-z]"">
+                     <br>
+                    <label> Name Contains: </label>
+                    <input type="text" name = "c_name" maxlength="5" size="5" pattern = "[a-zA-Z]"> 
+                    <br>
+                </fieldset>         
+        </section>
+        <br> 
+        <section class="second">
+                    <fieldset class="second_fieldset">
+                        <legend>Continents</legend>
+                        <input type="checkbox" name="continent" value="North America" checked> North America <br>
+                        <input type="checkbox" name="continent" value="South America"> South America<br>
+                        <input type="checkbox" name="continent" value="Europe"> Europe<br>
+                        <input type="checkbox" name="continent" value="Asia"> Asia<br>
+                        <input type="checkbox" name="continent" value="Africa"> Africa <br>
+                </fieldset>
+
+        </section>
+        <br> 
+        <section class="third">
+                    <fieldset class="third_fieldset">
+                        <legend>Population</legend>
+                        <input type="radio" name="city_pop" value="5" checked> &lt;&nbsp;50,000<br>
+                        <input type="radio" name="city_pop" value="50"> 50,000 &nbsp;&lt;&nbsp;&nbsp;&lt;&nbsp;500,000<br>
+                        <input type="radio" name="city_pop" value="500"> 500,000&nbsp;&lt;&nbsp;&nbsp;&lt;5,000,000<br>
+                        <input type="radio" name="city_pop" value="5000"> &gt;&nbsp;5,000,000 <br>
+                    </fieldset>
+        </section>
+        <br> <br>
+        <button type="submit">Submit</button>
+    </form>            
+</main>
+</html>
