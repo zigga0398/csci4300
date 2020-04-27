@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="contact.js"></script>
+</head>
+<body>
+    <nav style="margin-bottom:10px;" class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">Logo</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li style="margin-right:5px;" class="nav-item">
+                    <form class="form-inline" action="/action_page.php">
+                        <input class="form-control mr-sm-1" type="text" placeholder="Search">
+                        <button class="btn btn-light" type="submit">Search</button>
+                    </form>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><span class="fas fa-user"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><span class="far fa-compass"></span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <h1 style="text-align: center; padding: 10px">Questions? Comments? Concerns?</h1>
+        <h5 style="text-align: center; padding: 10px">Use the form below to let us know about your thoughts or any issues!</h5>
+        <form method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="someone@example.com" />
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="drop">Comment Type:</label>
+                <div class="dropdown" id="drop">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="dropbutton">
+                        Choose the issue you're experiencing.
+                    </button>
+                    <div class="dropdown-menu">
+                        <button type="button" class="dropdown-item" onclick="change()" id="link1">General Question</button>
+                        <button type="button" class="dropdown-item" onclick="change()" id="link2">General Comment</button>
+                        <button type="button" class="dropdown-item" onclick="change()" id="link3">Profile Issue</button>
+                        <button type="button" class="dropdown-item" onclick="change()" id="link4">Website Issue</button>
+                        <button type="button" class="dropdown-item" onclick="change()" id="link5">Report Content</button>
+                        <button type="button" class="dropdown-item" onclick="change()" id="link6">Other</button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="height:auto; overflow:hidden; max-height:1000px;">
+                <label for="comments">Questions/Comments:</label>
+                <textarea class="form-control" id="comments" wrap="soft" placeholder="Write your questions and comments here!" onkeydown="resize('comments')" style="overflow:hidden"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="submit()">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
